@@ -1,0 +1,579 @@
+
+.App {
+  margin: 0;
+  padding: 0;
+}
+  
+  /* Add spacing between L4, L5, and L6 */
+.level-container {
+  margin-bottom: 20px; /* Spacing between levels */
+}
+
+.level-container:last-child {
+  margin-bottom: 0; /* No margin for the last item */
+}
+
+
+
+/* Ensure consistency between grouped items */
+.level-container.group-top + .level-container,
+.level-container + .level-container.group-bottom {
+  margin-top: 0; /* Remove double spacing between grouped levels */
+}
+
+  
+  
+  /* Flexbox for Layout */
+  .flex-container {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .left-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: -9px;
+  }
+  
+  .ls-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    background-color: #f9fafb;
+    border: 2px solid #d1d5db;
+    border-radius: 8px;
+    text-align: center;
+    width: 80%;
+  }
+  .level-label {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 0px;
+    font-family: "Quicksand", sans-serif;
+  }
+  /* Common transition for all interactive elements */
+/* Remove the general hover effects */
+.pioneer, .judge, .instructor, .explorer, .explainer, .architect {
+  transition: none; /* Remove general transition */
+  cursor: default; /* Remove pointer cursor by default */
+}
+
+/* Remove general hover states */
+.pioneer:hover,
+.judge:hover,
+.instructor:hover,
+.explorer:hover,
+.explainer:hover,
+.architect:hover {
+  opacity: 1; /* Remove hover opacity effect */
+}
+
+/* Only apply interactive styles within the interactive guide */
+.interactive-guide .pioneer,
+.interactive-guide .judge,
+.interactive-guide .instructor,
+.interactive-guide .explorer,
+.interactive-guide .explainer,
+.interactive-guide .architect {
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.highly {
+  display: inline-block;
+  max-width: 250px;  /* Limit width to ensure it stays within 2 lines */
+  padding: 6px 10px;  /* Reduce padding for a smaller size */
+  margin: 5px 0;  /* Adjust margins */
+  border: 2px solid #007bff;
+  border-radius: 6px; /* Slightly smaller radius */
+  font-size: 12px; /* Reduce font size to fit within two lines */
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  background-color: #f8f9fa;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  word-wrap: break-word;
+  line-height: 1.4; /* Adjust line spacing */
+}
+
+.highly:hover {
+  background-color: #e2e6ea;
+
+}
+
+
+
+
+.interactive-guide .pioneer:hover,
+.interactive-guide .judge:hover,
+.interactive-guide .instructor:hover,
+.interactive-guide .explorer:hover,
+.interactive-guide .explainer:hover,
+.interactive-guide .architect:hover {
+  opacity: 0.6;
+}
+
+/* Similarly scope the ls-box interactions */
+.ls-box {
+  transition: none;
+  cursor: default;
+}
+
+.ls-box:hover {
+  opacity: 1;
+}
+
+.interactive-guide .ls-box {
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.interactive-guide .ls-box:hover {
+  opacity: 0.6;
+}
+
+/* Keep arrow interactions only in interactive mode */
+.arrow-img {
+  cursor: default;
+  transition: none;
+}
+
+/* Add these animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add base animation class */
+.fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Apply to info container */
+.info-container {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease-in-out, transform 0.3s ease-out;
+  transform: translateY(10px);
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  line-height: 1.4;
+  gap: 4px;
+  width: 180px;
+  flex-shrink: 0;
+}
+
+.right-section.show-info .info-container {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add animation to newly appearing elements */
+.level-content-styled,
+.level-image,
+.single-highlight,
+.multi-highlight {
+  animation: fadeIn 0.3s ease-out;
+}
+.interactive-guide .arrow-img {
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.interactive-guide .arrow-img:not(.disabled):hover {
+  opacity: 0.6;
+}
+  
+  .level-content {
+    font-size: 13px;
+    color: #000;
+    font-family: 'Quicksand', sans-serif;
+    
+  }
+  .level-content2 {
+    width: 100%;
+    flex-grow: 1;
+    margin-right: 20px; /* Add some right margin for spacing */
+    position:relative;
+    top:8px;
+  }
+
+  /* Base styles for both types of content */
+.level-content-plain,
+.level-content-styled {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+/* Plain text content under the level label */
+.level-content-plain {
+  color: #374151;
+  font-size: 1rem;
+}
+
+/* Styled content with highlights and bold text */
+.level-content-styled {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+}
+
+.formatted-text {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.75;
+  color: #000;
+  text-align: center;
+  width: 100%; /* Full width */
+  margin-left: 0; /* Remove any margin */
+  flex-grow: 1; /* Allow growing */
+}
+
+/* Highlight styling */
+.highlight {
+  background-color: #2563eb;
+  color: #ffffff; /* Set text color to white */
+  padding: 0.05rem 0.25rem; /* Adjust padding to reduce vertical height */
+  
+  font-weight: 500;
+  display: inline-block;
+  margin: 0 0.005rem;
+}
+
+
+/* Bold text styling */
+.bold {
+  font-weight: 600;
+  color: #1f2937;
+}
+  
+  .blue-arrow-container img {
+    margin:5px;
+    margin-left: -20px;
+    width: 40px; /* Adjust the width as needed */
+    height: auto; /* Keeps the aspect ratio */
+  }
+  
+  
+  .arrow-img {
+    cursor: pointer;
+    height: 30px;
+  }
+  .interactive-guide {
+    position: relative; /* Ensure child elements are positioned relative to this container */
+    padding: 10px;
+    
+    border-radius: 8px;
+    background-color: #ffffff;
+    overflow: hidden;
+  }
+  .level-image {
+    margin-top: 10px; /* Add spacing between the info-container and the image */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically if the container has a height */
+  }
+  
+  /* Styling for the images */
+  .level-image img {
+    max-width: 100%; /* Ensure the image does not exceed the container width */
+    max-height: 150px; /* Limit the height of the images */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Add rounded corners for a polished look */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: transform 0.3s ease; /* Smooth scaling effect on hover */
+  }
+
+  .reset-button {
+    position: absolute; /* Place the button inside the container */
+    top: 10px; /* Distance from the top of the container */
+    right: 10px; /* Distance from the right of the container */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f8f9fa;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10; /* Ensure it stays on top of other elements inside the container */
+  }
+  
+  .reset-button:hover {
+    background-color: #e9ecef;
+  }
+  
+  .refresh-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  
+
+  .right-section {
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+    margin: -9px;
+    border: 2px solid transparent;
+    min-height: calc(100% - 72px);
+    position: relative;
+    top: -32px;
+    width: 100%; /* Ensure full width */
+  }
+
+  
+  
+  .red-arrow-container {
+    display: flex;
+    align-items: center; /* Center the arrow vertically */
+    justify-content: center; /* Center the arrow horizontally */
+    position: relative;
+    
+}
+
+
+.info-container {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease-in-out;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  line-height: 1.4;
+  gap: 4px;
+  width: 180px; /* Fixed width for info container */
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+  .right-section.show-info {
+    align-items: center; /* Ensure alignment doesn't change when info appears */
+    position:relative;
+    top:-32px;
+    
+  }
+  
+
+  
+  .right-section.show-info .info-container {
+    visibility: visible;
+    opacity: 1; /* Make it visible when `show-info` is added */
+    
+  }
+  
+  
+  .response-content {
+    font-size: 14px;
+    color: #6b7280;
+    margin-left: 8px; /* Add spacing between red arrow and text */
+  }
+  
+  /* Diagonal Arrow */
+  .diagonal-arrow {
+    height: 70px;
+    margin-top: 20px;
+    
+  }
+  .highlight-read {
+    font-size: 12px; /* Smaller text */
+    color: #6b7280; /* Grey color */
+    font-weight: normal; /* Optional: lighter weight */
+  }
+  
+  .diagonal-arrow-img {
+    position: absolute;
+    
+    
+    
+    width: 80px; /* Adjust the size as needed */
+
+    z-index: 10;
+    top: 50px; /* Shift the diagonal arrow down */
+  }
+  
+  .arrow-img.disabled {
+    opacity: 0.3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  .placeholder {
+    width: 24px; /* Set the width of the blue arrow image */
+    height: 30px; /* Set the height of the blue arrow image */
+    visibility: hidden; /* Makes it invisible but still occupies space */
+  }
+  
+  /* Highlight styles */
+.pioneer,
+.judge,
+.instructor,
+.explorer,
+.explainer,
+.architect {
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  color: black;
+  padding: 2px 4px;
+  font-size:18px;
+  
+}
+  
+  
+.pioneer {
+  background-color: #ffd9df;
+}
+
+.judge {
+  background-color: #dfdefa;
+}
+
+.instructor {
+  background-color: #d6f6de;
+}
+
+.explorer {
+  background-color: #e0e0e0;
+}
+
+.explainer {
+  background-color: #fff7ce;
+}
+
+.architect {
+  background-color: #eee8e1;
+}
+
+/* Adjust red arrow placement */
+.red-arrow-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.red-arrow {
+  margin-bottom: 10px;
+}
+
+/* Single highlight layout */
+.single-highlight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.specific-font {
+  font-size: 13px; /* Adjust to your desired font size */
+  font-weight: bold; /* Optional: make the text bold */
+  color: #333; /* Optional: change the text color */
+  line-height: 1.4; /* Optional: improve readability */
+  text-align: center;
+}
+
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.read-label {
+  color: #6c757d; /* Bootstrap's secondary text color */
+  font-size: 0.85rem; /* Slightly smaller font */
+  margin-right: 0.5rem; /* Add space after the label */
+  font-weight: bold; /* Makes the label stand out slightly */
+}
+
+
+/* Multi-highlight layout */
+.multi-highlight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px; /* Small gap to ensure minimal spacing */
+  text-align: center;
+}
+.interactive-guide .pioneer,
+.interactive-guide .judge,
+.interactive-guide .instructor,
+.interactive-guide .explorer,
+.interactive-guide .explainer,
+.interactive-guide .architect {
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  color: black;
+  font-size: 18px;
+  text-align: center;
+  padding: 2px 4px;
+  display: inline-block;
+  width: 180px; /* Fixed width for uniform highlights */
+  height: 30px; /* Fixed height */
+  line-height: 30px;
+  
+}
+
+
+
+.interactive-guide .pioneer1 {
+  background-color: #ffd9df;
+}
+
+.interactive-guide .judge {
+  background-color: #dfdefa;
+}
+
+.interactive-guide .instructor {
+  background-color: #d6f6de;
+}
+
+.interactive-guide .explorer {
+  background-color: #e0e0e0;
+}
+
+.interactive-guide .explainer {
+  background-color: #fff7ce;
+}
+
+.interactive-guide .architect {
+  background-color: #eee8e1;
+}
+
+/* Additional styles for the Interactive Guide */
+.interactive-guide .level-container {
+  margin-bottom: 20px;
+}

@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+@import url('https://webfontworld.github.io/pretendard/Pretendard.css');
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  line-height: 1.6;
+}
+.font-quicksand {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.pioneer, .judge, .instructor, .explorer, .explainer, .architect {
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.pioneer:hover, .judge:hover, .instructor:hover, 
+.explorer:hover, .explainer:hover, .architect:hover {
+  opacity: 0.6;
+}
+.Main-title {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 2.4em;
+  color: #000;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.Subtitle {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 1.2em;
+  color: #666;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.View-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.Toggle-button {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 6px;
+  background: #f3f4f6;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.Toggle-button.active {
+  background: #2563eb;
+  color: white;
+}
+
+.Content-container {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Title {
+  font-size: 2.35rem;  /* or any size you prefer */
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.Subtitle {
+  font-size: 1.5rem;  /* or any size you prefer */
+  text-align: left;   /* this will make it left-aligned */
+  margin-bottom: 2rem;
+  color: #4A5568;     /* optional: adds a slightly muted color */
+}
+
+.article-content {
+  font-family: 'Pretendard', sans-serif;  /* Default font for all regular content */
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.article-content p {
+  margin-bottom: 1.5em;
+}
+
+/* Apply Quicksand to specific elements */
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content .pioneer,
+.article-content .judge,
+.article-content .instructor,
+.article-content .explorer,
+.article-content .explainer,
+.article-content .architect {
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* Ensure the main title uses Quicksand */
+.Main-title {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+}
+
+/* Ensure subtitles use Quicksand */
+.Subtitle {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+}
+
+/* Ensure section titles use Quicksand */
+.Section-title {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+}
+
+.Section-title {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 1.8em;
+  color: #000;
+  margin-bottom: 24px;
+}
+
+.Cluster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.Cluster-card {
+  padding: 20px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.Cluster-title {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 1.4em;
+  color: #000;
+  margin-bottom: 12px;
+}
+
+.Cluster-description {
+  font-size: 0.95em;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+.pioneer {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  color: black; /* Font color remains black */
+  background-color: #ffd9df; /* Highlight color for Pioneer */
+  padding: 2px 4px; /* Optional padding for better appearance */
+  
+}
+
+.judge {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  color: black; /* Font color remains black */
+  background-color: #dfdefa; /* Highlight color for Judge */
+  padding: 2px 4px; /* Optional padding for better appearance */
+  
+}
+
+.instructor {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  color: black; /* Font color remains black */
+  background-color: #d6f6de; /* Highlight color for Instructor */
+  padding: 2px 4px; /* Optional padding for better appearance */
+  
+}
+
+.explorer {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  color: black; /* Font color remains black */
+  background-color: #e0e0e0; /* Highlight color for Explorer */
+  padding: 2px 4px; /* Optional padding for better appearance */
+  
+}
+
+.explainer {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  color: black; /* Font color remains black */
+  background-color: #fff7ce; /* Highlight color for Explainer */
+  padding: 2px 4px; /* Optional padding for better appearance */
+  
+}
+
+.architect {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  color: black; /* Font color remains black */
+  background-color: #eee8e1; /* Highlight color for Architect */
+  padding: 2px 4px; /* Optional padding for better appearance */
+  
+}
+/* For titles and specific words that need Quicksand */
+.title {
+   font-family: 'Quicksand', sans-serif;
+  font-weight:800;
+  font-size:  2.4em;
+}
+.section-title,
+.role-name {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+}
+
+/* For regular content */
+.content {
+  font-family: 'Pretendard', sans-serif;
+}
+.font-quicksand {
+  font-family: 'Quicksand', sans-serif;
+  font-size:1.1em;
+}
+
+
+
+
+
+/* Add more specific styling as needed */
