@@ -34,4 +34,3 @@ MIT License. See `LICENSE` for details.
 
 ---
 
-This project is a supplement to the paper _Unveiling High-Dimensional Backstage_, aiming to make DR literature more accessible and structured for analysts of all expertise levels.
